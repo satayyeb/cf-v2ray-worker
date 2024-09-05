@@ -29,5 +29,5 @@ jobs:
     - name: Deploy
       run: sed -i "s/KV_NAME/${{ secrets.KV_NAME }}/g" wrangler.toml && npx wrangler deploy
       env:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
